@@ -39,7 +39,7 @@ firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
 
 # Set up wordpress database
-mysql -u root -p -e "CREATE DATABASE $wpDatabaseName; CREATE USER $wpDatabaseUser@localhost; SET PASSWORD FOR $wpDatabaseUser= PASSWORD('$wpDatabasePassword@localhost'); GRANT ALL PRIVILEGES ON $wpDatabaseName.* TO $wpDatabaseUser@localhost IDENTIFIED BY '$wpDatabasePassword'; FLUSH PRIVILEGES; "
+mysql -u root -p -e "CREATE DATABASE $wpDatabaseName; CREATE USER $wpDatabaseUser@localhost; SET PASSWORD FOR $wpDatabaseUser@localhost= PASSWORD('$wpDatabasePassword'); GRANT ALL PRIVILEGES ON $wpDatabaseName.* TO $wpDatabaseUser@localhost IDENTIFIED BY '$wpDatabasePassword'; FLUSH PRIVILEGES; "
 
 
 # Download wordpress
